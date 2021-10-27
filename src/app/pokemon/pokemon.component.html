@@ -1,0 +1,13 @@
+<div class="text-center bg-warning">
+  <h2>POKEDEX</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3 text-center" *ngFor="let poke of pokemons">
+      <img [src]="poke.sprites.front_default" alt="pokemon-img">
+      <p>{{poke.name}}</p>
+      <span></span>
+    </div>
+  </div>
+</div>
