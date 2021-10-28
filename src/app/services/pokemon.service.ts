@@ -10,11 +10,11 @@ export class PokemonService {
     private httpClient: HttpClient,
   ) { }
 
-  getPokemon(){
-    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon?limit=16");
+  getPokemon(limitNb: number, offsetNb: number){
+    return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon?limit=${limitNb}&offset=${offsetNb}`);
   }
 
-  getDetailPokemon(name: string){
+  getEachPokemon(name: string){
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   }
 

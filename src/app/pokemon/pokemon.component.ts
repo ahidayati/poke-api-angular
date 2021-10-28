@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PokemonService} from "../services/pokemon.service";
+import {Poke} from "../../models/poke";
 
 @Component({
   selector: 'app-pokemon',
@@ -8,21 +9,28 @@ import {PokemonService} from "../services/pokemon.service";
 })
 export class PokemonComponent implements OnInit {
 
-  pokemons: any[] = [];
+  arrayPokemons: any = [];
+  page: number = 1;
+  totalPokemons: number = 0;
 
   constructor(
     public pokemonService: PokemonService,
   ) { }
 
   ngOnInit(): void {
-    this.pokemonService.getPokemon().subscribe((data: any) =>{
-      data.results.forEach((result:any)=>{
-        this.pokemonService.getDetailPokemon(result.name).subscribe((uniqueResult: any)=>{
-          this.pokemons.push(uniqueResult);
-          console.log(this.pokemons)
-        });
+    this.getPokemon();
+  }
+
+  getPokemon(){
+    this.pokemonService.getPokemon(8, (this.page-1)*8).subscribe((data: any) =>{
+      this.totalPokemons = data.count;
+      console.log(data);
+      data.results.forEach((result: Poke)=>{
+        this.pokemonService.getEachPokemon(result.name).subscribe((uniqueResult: any)=>{
+          this.arrayPokemons.push(uniqueResult);
+          // console.log(this.arrayPokemons);
+          });
       });
     });
   }
-
 }
