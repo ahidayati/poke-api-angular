@@ -1,3 +1,5 @@
+!!! This is not a very good example on how to use API because I followed a tutorial that used "any" type and not create a class or interface. Will fix this later. !!!
+
 # PokeApiAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
