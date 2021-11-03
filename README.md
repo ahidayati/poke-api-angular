@@ -1,4 +1,4 @@
-!!! This is not a very good example on how to use API because I followed a tutorial that used "any" type and not create a class or interface. Will fix this later. !!!
+⚠️⚠️⚠️ This is not a very good example on how to use API because I followed a tutorial that used "any" type and not create a class or interface. Obviously it's not a good coding practice even if it works. Will fix this later. ⚠️⚠️⚠️
 
 # PokeApiAngular
 
