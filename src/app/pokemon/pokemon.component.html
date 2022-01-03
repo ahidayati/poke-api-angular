@@ -4,7 +4,7 @@
     <div class="col-3 text-center hover-color"
          *ngFor="let poke of arrayPokemons | paginate: {itemsPerPage: 8, currentPage: page, totalItems: totalPokemons}"
          data-bs-toggle="tooltip" data-bs-placement="bottom" title="More Detail"
-          routerLink="/detail/{{poke.id}}">
+          routerLink="/detail/{{poke.name}}">
       <img
         [src]="poke.sprites.other['official-artwork'].front_default"
         alt="pokemon-img"

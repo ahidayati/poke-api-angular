@@ -1,1 +1,40 @@
-<p>pokemon-detail works!</p>
+<div class="container">
+  <div *ngIf="eachPoke"
+       class="row">
+      <div class="col-6">
+        <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'+eachPoke.id+'.png'" alt="poke-img">
+      </div>
+      <div class="col-6">
+        <p class="text-capitalize fs-1 fw-bold">
+          {{eachPoke.name}} #{{eachPoke.id}}</p>
+        <table class="table">
+          <tr>
+            <th>Height</th>
+            <td>{{eachPoke.height}}</td>
+          </tr>
+          <tr>
+            <th>Weight</th>
+            <td>{{eachPoke.weight}}</td>
+          </tr>
+          <tr>
+            <th>Species</th>
+            <td>{{eachPoke.species.name}}</td>
+          </tr>
+          <tr>
+            <th>Abilities</th>
+            <td *ngFor="let abilityEach of eachPoke.abilities">{{abilityEach.ability.name}}</td>
+          </tr>
+          <tr>
+            <th>Types</th>
+            <td *ngFor="let typeEach of eachPoke.types">{{typeEach.type.name}}</td>
+          </tr>
+        </table>
+        <span class="row-cols-3">
+          <img src="{{eachPoke.sprites.front_default}}" alt="poke-img">
+        </span>
+        <span class="row-cols-3">
+          <img src="{{eachPoke.sprites.back_default}}" alt="poke-img">
+        </span>
+      </div>
+    </div>
+</div>

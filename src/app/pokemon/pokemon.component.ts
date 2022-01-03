@@ -24,7 +24,7 @@ export class PokemonComponent implements OnInit {
   getPokemon(){
     this.pokemonService.getPokemon(8, (this.page-1)*8).subscribe((data: any) =>{
       this.totalPokemons = data.count;
-      console.log(data);
+      // console.log(data);
       data.results.forEach((result: Poke)=>{
         this.pokemonService.getEachPokemon(result.name).subscribe((uniqueResult: any)=>{
           this.arrayPokemons.push(uniqueResult);

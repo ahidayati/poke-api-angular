@@ -18,4 +18,7 @@ export class PokemonService {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   }
 
+  getEachPokemonX(name: string|null){
+    return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+  }
 }
